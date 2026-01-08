@@ -21,12 +21,10 @@ EXT_NAME_LOWER = EXT_NAME.lower().replace(' ', '_')
 defaultOutputDirectory = os.path.join('outputs', EXT_NAME_LOWER)
 
 
-if not hasattr(shared.cmd_opts, "lowvram"):
-    shared.cmd_opts.lowvram = False
-if not hasattr(shared.cmd_opts, "lowram"):
-    shared.cmd_opts.lowram = False
-if not hasattr(shared.cmd_opts, "medvram"):
-    shared.cmd_opts.medvram = False
+compatibilityCmdOptsAttributes = ["lowvram", "lowram", "medvram", "medvram_sdxl"]
+for attribute in compatibilityCmdOptsAttributes:
+    if not hasattr(shared.cmd_opts, attribute):
+        setattr(shared.cmd_opts, attribute, False)
 
 
 def getSaveDir():
