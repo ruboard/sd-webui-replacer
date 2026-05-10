@@ -43,7 +43,7 @@ def mountDedicatedPage(demo, app):
                     tab = replacer_main_ui.replacerMainUI_dedicated.getReplacerTabUI()
                     tab.render()
                 with gr.Tab(label="Video", elem_id=f"tab_video"):
-                    tab_video = replacer_main_ui.replacerMainUI_dedicated.getReplacerVideoTabUI()
+                    #tab_video = replacer_main_ui.replacerMainUI_dedicated.getReplacerVideoTabUI()
                     tab_video.render()
                 if extrasInDedicated():
                     with gr.Tab(label="Extras", elem_id="extras"):
