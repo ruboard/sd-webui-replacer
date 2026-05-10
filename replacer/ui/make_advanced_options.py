@@ -274,7 +274,7 @@ def makeAdvancedOptions(comp: AttrDict, isDedicatedPage: bool):
                         tool="sketch",
                         image_mode="RGB",
                         brush_color=getMaskColorStr(),
-                        height=shared.opts.img2img_editor_height
+                        height=getattr(shared.opts, "img2img_editor_height", 512)
                     )
                 with gr.Row():
                     gr.Markdown("*If image isn't fit, use fullscreen hotkey or resize column*")
@@ -306,7 +306,7 @@ def makeAdvancedOptions(comp: AttrDict, isDedicatedPage: bool):
                         tool="sketch",
                         image_mode="RGB",
                         brush_color=getMaskColorStr(),
-                        height=shared.opts.img2img_editor_height
+                        height=getattr(shared.opts, "img2img_editor_height", 512)
                     )
                 with gr.Row():
                     gr.Markdown("*If image isn't fit, use fullscreen hotkey or resize column*")
