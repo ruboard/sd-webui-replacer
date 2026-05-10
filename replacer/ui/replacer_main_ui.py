@@ -46,7 +46,7 @@ def initMainUI(*args):
     try:
         replacer_extensions.initAllScripts()
         replacerMainUI = ReplacerMainUI(isDedicatedPage=False)
-        replacerMainUI_dedicated = ReplacerMainUI(isDedicatedPage=True)
+        #replacerMainUI_dedicated = ReplacerMainUI(isDedicatedPage=True)
     finally:
         replacer_extensions.restoreTemporaryChangedThings()
 
