@@ -23,7 +23,7 @@ from replacer.tools import Pause
 def getTabUI(comp: AttrDict, isDedicatedPage: bool):
     with gr.Blocks(analytics_enabled=False) as replacerTabUI:
         comp.selected_input_mode = gr.Textbox(value="tab_single", visible=False)
-        comp.dummy_component = gr.Label(visible=False)
+        comp.dummy_component = gr.Textbox(visible=False)
         comp.trueComponent = gr.Checkbox(value=True, visible=False)
         comp.falseComponent = gr.Checkbox(value=False, visible=False)
         if replacer_extensions.controlnet.SCRIPT:
@@ -220,7 +220,8 @@ def getTabUI(comp: AttrDict, isDedicatedPage: bool):
 
                 with gr.Row():
                     if not isDedicatedPage:
-                        gr.Markdown(f'[Open dedicated page]({getDedicatedPagePath()})')
+                        #gr.Markdown(f'[Open dedicated page]({getDedicatedPagePath()})')
+                        pass
                     else:
                         comp.sd_model_checkpoint = ui_settings.create_setting_component('sd_model_checkpoint')
                         comp.override_sd_model = gr.Checkbox(label='Override sd model dedicated',
