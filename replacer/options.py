@@ -45,7 +45,7 @@ def needAutoUnloadModels():
     if opt == 'Only SDXL':
         return shared.sd_model.is_sdxl
 
-    return shared.cmd_opts.lowvram or shared.cmd_opts.medvram or (shared.sd_model.is_sdxl and shared.cmd_opts.medvram_sdxl)
+    return shared.cmd_opts.lowvram or shared.cmd_opts.medvram or (getattr(shared.sd_model, 'is_sdxl', False) and shared.cmd_opts.medvram_sdxl)
 
 
 def doNotShowUnloadButton():
